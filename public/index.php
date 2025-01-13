@@ -1,29 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
+<?php
+require_once "../app/controllers/UserController.php";
 
-    </style>
-</head>
-<body>
-    <nav>
+// Obtener la URL solicitada
+$requestUri = $_SERVER['REQUEST_URI'];
 
-    </nav>
-    <main>
+// Quitar el prefijo "/NoticiasPHP/public" de la URL
+$basePath = "/NoticiasPHP/public";
+$route = str_replace($basePath, "", $requestUri);
 
-    </main>
-    <?php
-        require_once __DIR__ ."/../app/controllers/UserController.php";
+echo "REQUEST_URI: " . $_SERVER['REQUEST_URI'] . "<br>";
+echo "QUERY_STRING: " . $_SERVER['QUERY_STRING'] . "<br>";
 
-        // Crear instancia del controlador
-        $userController = new UserController();
-
-        // Llamar al método `index` del controlador
-        $userController->index();
-    ?>
-
-</body>
-</html>
+// Verificar la ruta y llamar al controlador correspondiente
+if ($route === "/users") {
+    $controller = new UserController();
+    $controller->index();
+} elseif ($route === "/home" || $route === "/") {
+    echo "Página de inicio (home)";
+} else {
+    echo "Página no encontrada.";
+}
+?>
