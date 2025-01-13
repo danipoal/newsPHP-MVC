@@ -7,7 +7,8 @@
 </head>
 <body>
     <?php
-        echo "Hola";
+        include_once("./model/user.php");
+        getAllUsers();       
     ?>
 </body>
 </html>
