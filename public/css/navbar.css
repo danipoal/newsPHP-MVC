@@ -1,0 +1,13 @@
+.nav-container{
+    font-size: 1.2rem;
+    border: 1px solid black;
+    background-color: antiquewhite;
+}
+.nav-container ul{
+    display: flex;
+    justify-content: space-around;
+
+}
+.nav-container li{
+    list-style: none;
+}

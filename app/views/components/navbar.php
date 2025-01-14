@@ -1,7 +1,7 @@
 <!-- views/components/navbar.php -->
+<link rel="stylesheet" href="/NoticiasPHP/public/css/navbar.css">
 
-
-<nav>
+<nav class="nav-container">
     <ul>
         
         <li><a href="/NoticiasPHP/public/home">Inicio</a></li>

@@ -26,5 +26,8 @@
             closeConection($conection);
             return 0;
         }
+        public function createUser(){
+            
+        }
     }
 ?>

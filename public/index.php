@@ -17,6 +17,10 @@ if ($route === "/users") {
     $controller->index();
 } elseif ($route === "/home" || $route === "/") {
     echo "Página de inicio (home)";
+} elseif ($route === "/users/create" && $_SERVER['REQUEST_METHOD'] === 'POST'){
+    echo 'Creando usuario';
+    $controller = new UserController();
+    $controller->createUser();
 } else {
     echo "Página no encontrada.";
 }
