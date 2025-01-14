@@ -24,9 +24,17 @@
             // Se validan (logica de negocio)
             // Comprobar que el email no este registrado ya
 
+            $usr_check = new User();
+            $usr_check = $this->userModel->getUserByEmail($email);
+            if($usr_check){
+                return 0;   // SI ya esta creado salimos de la funcion
+            }
+
             // Llamar al modelo para que lo inserte en la bd
-            $this->userModel->createUser();
-            // Devolver la vista index actualizada
+            $user = new User(0, $name, $email, $password);
+            $this->userModel->createUser($user);
+
+            // Devolver la vista index actualizada (de momento en el routement index.php)
         }
     }
 ?>

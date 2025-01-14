@@ -18,9 +18,15 @@ if ($route === "/users") {
 } elseif ($route === "/home" || $route === "/") {
     echo "Página de inicio (home)";
 } elseif ($route === "/users/create" && $_SERVER['REQUEST_METHOD'] === 'POST'){
-    echo 'Creando usuario';
     $controller = new UserController();
-    $controller->createUser();
+    
+    if($controller->createUser() == 0){
+        // Si el nuevo usuario ya estaba en la bd, enseñamos error
+        echo 'Ya estaba en la BD, Error al crear';
+    }else {
+        // Si no estaba creado, recargamos el index
+        $controller->index();
+    }
 } else {
     echo "Página no encontrada.";
 }
