@@ -17,6 +17,7 @@ if ($route === "/users") {
     $controller->index();
 } elseif ($route === "/home" || $route === "/") {
     echo "Página de inicio (home)";
+    require_once __DIR__ ."/../app/views/home.php";
 } elseif ($route === "/users/create" && $_SERVER['REQUEST_METHOD'] === 'POST'){
     $controller = new UserController();
     
@@ -27,6 +28,11 @@ if ($route === "/users") {
         // Si no estaba creado, recargamos el index
         $controller->index();
     }
+} elseif($route === "/users/delete" && $_SERVER['REQUEST_METHOD'] === 'POST'){
+    $controller = new UserController();
+    $controller->deleteUser();
+    $controller->index();
+
 } else {
     echo "Página no encontrada.";
 }

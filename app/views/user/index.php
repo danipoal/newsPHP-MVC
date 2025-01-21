@@ -13,8 +13,12 @@
                 foreach ($users as $user) {
                     echo '<div class="list-item">';
                         echo $contador .' - ' . $user->name . ' (' . $user->email . ')';
-                        echo '<div><button class="edit-button">Edit</button>';
-                        echo '<button class="delete-button">Delete</button></div>';
+                        echo '<div><button class="edit-button">Edit</button>'; 
+                        // Hay que hacer un span con value y que el form va a donde tiene
+                        echo '<form class="flex" action="/NoticiasPHP/public/users/delete" method="post">
+                                    <input type="hidden" name="id" value="'. $user->id .'">
+                                    <button class="delete-button">Delete</button>
+                                </form></div>';
                     echo '</div>';
                     $contador++;
                 }

@@ -35,6 +35,12 @@
             $this->userModel->createUser($user);
 
             // Devolver la vista index actualizada (de momento en el routement index.php)
+            return 1;
+        }
+        public function deleteUser(){
+            $id = $_POST['id'] ?? null;
+            $this->userModel->deleteUserById($id);
+
         }
     }
 ?>
