@@ -11,3 +11,20 @@
 .nav-container li{
     list-style: none;
 }
+.login-container{
+    background-color: rgb(243, 99, 183);
+    border-radius: 20px;
+    position: absolute;
+    border: none !important;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    width: 300px !important;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.display-none{
+    display: none;
+}

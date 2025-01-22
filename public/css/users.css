@@ -30,9 +30,16 @@ h1{
 .edit-button{
     background-color: yellow;
 }
+.accept-button{
+    background-color: rgb(17, 212, 17);
+}
 .delete-button{
     background-color: red;
 }
 .flex{
     display: inline;
+}
+.list-item input {
+    width: 120px;
+    background-color: rgba(255, 196, 0, 0.331);
 }

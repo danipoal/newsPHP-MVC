@@ -11,9 +11,9 @@
             $contador = 1;
             if (!empty($users)) {
                 foreach ($users as $user) {
-                    echo '<div class="list-item">';
-                        echo $contador .' - ' . $user->name . ' (' . $user->email . ')';
-                        echo '<div><button class="edit-button">Edit</button>'; 
+                    echo '<div id="user-item-'. $user->id .'" class="list-item">';
+                        echo '<span>'.$contador .' - ' . $user->name . ' (' . $user->email . ')</span>';
+                        echo '<div><button onclick="editUser('. $user->id .')" class="edit-button">Edit</button>'; 
                         // Hay que hacer un span con value y que el form va a donde tiene
                         echo '<form class="flex" action="/NoticiasPHP/public/users/delete" method="post">
                                     <input type="hidden" name="id" value="'. $user->id .'">
